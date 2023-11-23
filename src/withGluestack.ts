@@ -6,7 +6,8 @@ import {
   const findWorkspaceRoot = require('find-yarn-workspace-root');
   
   const gluestackDeps = [
-    'react-native-paper'
+    'react-native-paper',
+    'react-native-safe-area-context'
   ];
   
   const reactNativeDeps = [
