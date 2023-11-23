@@ -7,7 +7,8 @@ import {
   
   const gluestackDeps = [
     'react-native-paper',
-    'react-native-safe-area-context'
+    'react-native-safe-area-context',
+    'react-native-vector-icons'
   ];
   
   const reactNativeDeps = [
