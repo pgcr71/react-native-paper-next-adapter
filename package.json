@@ -33,7 +33,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "@gluestack/ui-next-adapter",
+  "name": "react-native-paper-next-adapter",
   "author": "mayank-96",
   "module": "dist/next-adapter.esm.js",
   "size-limit": [
