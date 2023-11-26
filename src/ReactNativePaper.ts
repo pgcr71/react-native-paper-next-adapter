@@ -5,7 +5,7 @@ import {
   } from './utils';
   const findWorkspaceRoot = require('find-yarn-workspace-root');
   
-  const gluestackDeps = [
+  const reactNativePaperDeps = [
     'react-native-paper',
     'react-native-safe-area-context',
     'react-native-vector-icons'
@@ -19,11 +19,11 @@ import {
     'react-art'
   ];
   
-  export default function withGluestackUI(nextConfig: any = {}) {
+  export default function withReactNativePaperUI(nextConfig: any = {}) {
     const currDir = process.cwd();
     let rootDependencyList = [];
     try {
-      rootDependencyList = getDependenciesFromNodeModules(currDir, gluestackDeps);
+      rootDependencyList = getDependenciesFromNodeModules(currDir, reactNativePaperDeps);
     } catch (e) {}
   
     let rootExactDependencyList = [];
@@ -43,7 +43,7 @@ import {
       try {
         parentDependencyList = getDependenciesFromNodeModules(
           metaWorkspace.workspacePath,
-          gluestackDeps
+          reactNativePaperDeps
         );
         parentExactDependencyList = getExactDependenciesFromNodeModules(
           metaWorkspace.workspacePath,
@@ -56,7 +56,7 @@ import {
       try {
         parentDependencyList = getDependenciesFromNodeModules(
           workspaceRoot,
-          gluestackDeps
+          reactNativePaperDeps
         );
         parentExactDependencyList = getExactDependenciesFromNodeModules(
           workspaceRoot,
@@ -64,7 +64,7 @@ import {
         );
       } catch (e) {}
     }
-    let gluestackUITranspileModules = Array.from(
+    let reactNativePaperUITranspileModules = Array.from(
       new Set([
         ...rootDependencyList,
         ...parentDependencyList,
@@ -76,7 +76,7 @@ import {
   
     const updatedNextConfig = {
       ...nextConfig,
-      transpilePackages: gluestackUITranspileModules,
+      transpilePackages: reactNativePaperUITranspileModules,
       webpack: (config: any) => {
         config = nextConfig.webpack ? nextConfig.webpack(config) : config;
   

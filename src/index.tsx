@@ -1,1 +1,1 @@
-export { default as withGluestackUI } from './withGluestack';
+export { default as withReactNativePaper } from './withReactNativePaper';
