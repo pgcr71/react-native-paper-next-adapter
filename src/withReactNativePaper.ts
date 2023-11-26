@@ -91,12 +91,25 @@ import {
           '.web.tsx',
           ...config.resolve.extensions,
         ];
-  
+        config.module.rules.push({
+          test: /\.(woff|woff2|ttf|eot|svg)$/,
+          loader: 'file-loader',
+          options: {
+            esModule: false,
+            name: '[name].[ext]',
+            outputPath: 'static/media/fonts/',
+            publicPath: '../assets/fonts/',
+          },
+        })
         config.module.rules.push({
           test: /\.ttf$/,
           loader: 'url-loader',
         });
   
+        config.module.rules.push( {
+          test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
+          type: 'asset/resource'
+        })
         return config;
       },
     };
